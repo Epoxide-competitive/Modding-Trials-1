@@ -1,0 +1,2 @@
+#Modding Trials 1
+This is a repository for team Epoxide's submission to The Modding Trials. The period of this event is from August 5th to 8th 2016. You can find more info about The Modding Trials [here](https://www.reddit.com/r/feedthebeast/comments/4tnq0k/the_modding_trials_official_announcement_and/?st=iqx8zpt6&sh=04fc7d8b)
