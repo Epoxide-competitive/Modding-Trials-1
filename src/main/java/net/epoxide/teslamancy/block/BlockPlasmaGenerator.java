@@ -1,17 +1,22 @@
 package net.epoxide.teslamancy.block;
 
-import net.epoxide.teslamancy.libs.Constants;
+import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
-public class BlockPlasmaGenerator extends Block {
+public class BlockPlasmaGenerator extends BlockContainer {
 
     public BlockPlasmaGenerator () {
 
         super(Material.IRON);
-        this.setRegistryName(new ResourceLocation(Constants.MODID, "plasmaGenerator"));
-        this.setUnlocalizedName(Constants.MOD_NAME + ".plasmaGenerator");
+    }
+
+
+    @Override
+    public TileEntity createNewTileEntity (World worldIn, int meta) {
+        return new TileEntityPlasmaGenerator();
     }
 }

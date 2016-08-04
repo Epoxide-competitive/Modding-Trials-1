@@ -1,17 +1,21 @@
 package net.epoxide.teslamancy.block;
 
-import net.epoxide.teslamancy.libs.Constants;
+import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
-public class BlockInductionPad extends Block {
+public class BlockInductionPad extends BlockContainer {
 
     public BlockInductionPad () {
 
         super(Material.IRON);
-        this.setRegistryName(new ResourceLocation(Constants.MODID, "inductionPad"));
-        this.setUnlocalizedName(Constants.MOD_NAME + ".inductionPad");
+    }
+
+    @Override
+    public TileEntity createNewTileEntity (World worldIn, int meta) {
+        return new TileEntityInductionPad();
     }
 }
