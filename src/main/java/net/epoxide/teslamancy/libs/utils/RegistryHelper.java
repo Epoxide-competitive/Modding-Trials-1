@@ -35,7 +35,7 @@ public class RegistryHelper {
     public static Block registerBlock (Block block, String blockName, ItemBlock itemBlock) {
         
         block.setRegistryName(blockName);
-        block.setUnlocalizedName(Constants.MODID + "." + blockName.replace('_', '.'));
+        block.setUnlocalizedName(Constants.MODID + "." + blockName.replaceAll("_", ""));
         block.setCreativeTab(CreativeTabTeslamancy.INSTANCE);
         GameRegistry.register(block);
         registerItem(itemBlock, blockName);
@@ -53,7 +53,7 @@ public class RegistryHelper {
     public static Item registerItem (Item item, String itemName) {
         
         item.setRegistryName(itemName);
-        item.setUnlocalizedName(Constants.MODID + "." + itemName.replace('_', '.'));
+        item.setUnlocalizedName(Constants.MODID + "." + itemName.replaceAll("_", ""));
         item.setCreativeTab(CreativeTabTeslamancy.INSTANCE);
         GameRegistry.register(item);
         
