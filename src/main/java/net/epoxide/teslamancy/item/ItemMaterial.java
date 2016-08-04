@@ -25,7 +25,7 @@ public class ItemMaterial extends Item {
     @Override
     public String getUnlocalizedName (ItemStack stack) {
         
-        return "item." + this.getVariantForMeta(stack.getMetadata()) + ".name";
+        return "item." + this.getVariantForMeta(stack.getMetadata());
     }
     
     @SideOnly(Side.CLIENT)
