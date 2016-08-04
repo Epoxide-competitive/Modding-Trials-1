@@ -1,0 +1,13 @@
+[{
+	"modid": "teslamancy",
+	"name": "Teslamancy",
+	"description": "Team Epoxide entry for the mod trials",
+	"version": "${version}",
+	"mcversion": "${mcversion}",
+	"url": "",
+	"updateUrl": "",
+	"authorList": ["Darkhax", "lclc98"],
+	"logoFile": "",
+	"screenshots": [],
+	"dependencies": []
+}]
