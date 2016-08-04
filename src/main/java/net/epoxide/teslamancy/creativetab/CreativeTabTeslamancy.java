@@ -16,6 +16,6 @@ public class CreativeTabTeslamancy extends CreativeTabs {
     @Override
     public Item getTabIconItem () {
         
-        return ContentHandler.itemWand;
+        return ContentHandler.itemMaterial;
     }
 }
