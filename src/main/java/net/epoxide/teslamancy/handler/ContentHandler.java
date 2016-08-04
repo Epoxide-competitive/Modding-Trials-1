@@ -28,11 +28,11 @@ public class ContentHandler {
     
     private static void initBlock () {
         
-        blockPlasmaGenerator = registerBlock(new BlockPlasmaGenerator(), "plasmaGenerator");
-        GameRegistry.registerTileEntity(TileEntityPlasmaGenerator.class, "plasmaGenerator");
+        blockPlasmaGenerator = registerBlock(new BlockPlasmaGenerator(), "plasma_generator");
+        GameRegistry.registerTileEntity(TileEntityPlasmaGenerator.class, "plasma_generator");
         
-        blockInductionPad = registerBlock(new BlockInductionPad(), "inductionPad");
-        GameRegistry.registerTileEntity(TileEntityInductionPad.class, "inductionPad");
+        blockInductionPad = registerBlock(new BlockInductionPad(), "induction_pad");
+        GameRegistry.registerTileEntity(TileEntityInductionPad.class, "induction_pad");
     }
     
     private static void initItem () {
