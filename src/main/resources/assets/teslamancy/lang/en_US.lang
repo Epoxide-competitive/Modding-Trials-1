@@ -1,0 +1,15 @@
+#English Language File
+
+#Blocks
+tile.teslamancy.plasmagenerator.name=Plasma Generator
+tile.teslamancy.inductionpad.name=Induction Pad
+
+#Items
+item.teslamancy.circuit.name=Circuit
+item.teslamancy.resistor.name=Resistor
+item.teslamancy.capacitor.name=Capacitor
+item.teslamancy.radiator.name=Radiator
+item.teslamancy.wand.name=Teslamancer Wand
+
+#Misc
+itemGroup.teslamancy=Teslamancy
