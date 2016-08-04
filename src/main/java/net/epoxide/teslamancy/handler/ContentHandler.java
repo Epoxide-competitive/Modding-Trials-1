@@ -4,6 +4,7 @@ import net.epoxide.teslamancy.block.BlockInductionPad;
 import net.epoxide.teslamancy.block.BlockPlasmaGenerator;
 import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
+import net.epoxide.teslamancy.item.ItemWand;
 import net.epoxide.teslamancy.libs.Constants;
 
 import net.minecraft.block.Block;
@@ -18,12 +19,14 @@ public class ContentHandler {
     public static CreativeTabs creativeTabTeslamancy = new CreativeTabs("teslamancy") {
         @Override
         public Item getTabIconItem () {
-            return Item.getItemFromBlock(ContentHandler.blockPlasmaGenerator);
+            return ContentHandler.itemWand;
         }
     };
 
     public static Block blockPlasmaGenerator;
     public static Block blockInductionPad;
+
+    public static Item itemWand;
 
     public static void init () {
 
@@ -32,15 +35,16 @@ public class ContentHandler {
     }
 
     private static void initBlock () {
+
         blockPlasmaGenerator = registerBlock(new BlockPlasmaGenerator(), "plasmaGenerator");
         GameRegistry.registerTileEntity(TileEntityPlasmaGenerator.class, "plasmaGenerator");
 
         blockInductionPad = registerBlock(new BlockInductionPad(), "inductionPad");
         GameRegistry.registerTileEntity(TileEntityInductionPad.class, "inductionPad");
-
     }
 
     private static Block registerBlock (Block block, String blockName) {
+
         block.setRegistryName(new ResourceLocation(Constants.MODID, blockName));
         block.setUnlocalizedName(Constants.MODID + "." + blockName);
         block.setCreativeTab(creativeTabTeslamancy);
@@ -56,5 +60,16 @@ public class ContentHandler {
 
     private static void initItem () {
 
+        itemWand = registerItem(new ItemWand(), "wand");
+    }
+
+    private static Item registerItem (ItemWand item, String itemName) {
+
+        item.setRegistryName(new ResourceLocation(Constants.MODID, itemName));
+        item.setUnlocalizedName(Constants.MODID + "." + itemName);
+        item.setCreativeTab(creativeTabTeslamancy);
+        GameRegistry.register(item);
+
+        return item;
     }
 }
