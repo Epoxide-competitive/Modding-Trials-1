@@ -20,7 +20,7 @@ public class GuiHandler implements IGuiHandler {
             case INDUCTION_PAD:
                 break;
             case ITEM_WAND:
-                return new ContainerWand();
+                return new ContainerWand(player, world);
         }
         return null;
     }
