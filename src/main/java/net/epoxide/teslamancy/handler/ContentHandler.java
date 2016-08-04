@@ -4,6 +4,7 @@ import net.epoxide.teslamancy.block.BlockInductionPad;
 import net.epoxide.teslamancy.block.BlockPlasmaGenerator;
 import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
+import net.epoxide.teslamancy.item.ItemMaterial;
 import net.epoxide.teslamancy.item.ItemWand;
 import net.epoxide.teslamancy.libs.Constants;
 
@@ -26,6 +27,7 @@ public class ContentHandler {
     public static Block blockPlasmaGenerator;
     public static Block blockInductionPad;
 
+    public static Item itemMaterial;
     public static Item itemWand;
 
     public static void init () {
@@ -42,30 +44,32 @@ public class ContentHandler {
         blockInductionPad = registerBlock(new BlockInductionPad(), "inductionPad");
         GameRegistry.registerTileEntity(TileEntityInductionPad.class, "inductionPad");
     }
-
-    private static Block registerBlock (Block block, String blockName) {
-
-        block.setRegistryName(new ResourceLocation(Constants.MODID, blockName));
-        block.setUnlocalizedName(Constants.MODID + "." + blockName);
-        block.setCreativeTab(creativeTabTeslamancy);
-        GameRegistry.register(block);
-
-        ItemBlock itemBlock = new ItemBlock(block);
-        itemBlock.setRegistryName(new ResourceLocation(Constants.MODID, blockName));
-        itemBlock.setUnlocalizedName(Constants.MODID + "." + blockName);
-        GameRegistry.register(itemBlock);
-
-        return block;
-    }
-
+    
     private static void initItem () {
 
+        itemMaterial = registerItem(new ItemMaterial(), "material");
         itemWand = registerItem(new ItemWand(), "wand");
     }
 
-    private static Item registerItem (ItemWand item, String itemName) {
+    private static Block registerBlock (Block block, String blockName) {
+        
+        return registerBlock(block, blockName, new ItemBlock(block));
+    }
+    
+    private static Block registerBlock (Block block, String blockName, ItemBlock itemBlock) {
 
-        item.setRegistryName(new ResourceLocation(Constants.MODID, itemName));
+        block.setRegistryName(blockName);
+        block.setUnlocalizedName(Constants.MODID + "." + blockName);
+        block.setCreativeTab(creativeTabTeslamancy);       
+        GameRegistry.register(block);
+        registerItem(itemBlock, blockName);
+        
+        return block;
+    }
+
+    private static Item registerItem (Item item, String itemName) {
+
+        item.setRegistryName(itemName);
         item.setUnlocalizedName(Constants.MODID + "." + itemName);
         item.setCreativeTab(creativeTabTeslamancy);
         GameRegistry.register(item);
