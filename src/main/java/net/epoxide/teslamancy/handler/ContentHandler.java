@@ -1,7 +1,6 @@
 package net.epoxide.teslamancy.handler;
 
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerBlock;
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItem;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.*;
 
 import net.epoxide.teslamancy.block.BlockInductionPad;
 import net.epoxide.teslamancy.block.BlockPlasmaGenerator;
@@ -39,6 +38,8 @@ public class ContentHandler {
     private static void initItem () {
         
         itemMaterial = registerItem(new ItemMaterial(), "material");
+        registerItemInvModel(itemMaterial, "material", ItemMaterial.VARIANTS);
+        
         itemWand = registerItem(new ItemWand(), "wand");
     }
 }
