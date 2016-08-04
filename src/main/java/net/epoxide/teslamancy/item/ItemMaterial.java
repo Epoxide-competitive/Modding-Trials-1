@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 
 public class ItemMaterial extends Item {
 
-    private static final String[] VARIANTS = new String[] {"circuit", "resister", "capacitor"};
+    private static final String[] VARIANTS = new String[] {"circuit", "resistor", "capacitor", "radiator"};
     
     public ItemMaterial() {
        
@@ -14,7 +14,7 @@ public class ItemMaterial extends Item {
     
     public String getVariantForMeta(int meta) {
         
-        return (meta < 0) ? VARIANTS[0] : (meta > 15) ? VARIANTS[15] : VARIANTS[meta];
+        return (meta < 0) ? VARIANTS[0] : (meta > VARIANTS.length) ? VARIANTS[VARIANTS.length] : VARIANTS[meta];
     }
     
     @Override
