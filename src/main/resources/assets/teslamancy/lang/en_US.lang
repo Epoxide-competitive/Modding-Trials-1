@@ -17,6 +17,7 @@ tooltip.teslamancy.showinfo=Press §d%s§7 for more info.
 tooltip.teslamancy.powerinfo=%s / %sT
 tooltip.teslamancy.output=Output: %sT/t
 tooltip.teslamancy.input=Input: %sT/t
+tooltip.teslamancy.artificial=Artificialy Charged
 
 #Misc
 itemGroup.teslamancy=Teslamancy
