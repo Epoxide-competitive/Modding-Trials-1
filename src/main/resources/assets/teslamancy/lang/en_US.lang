@@ -10,6 +10,13 @@ item.teslamancy.resistor.name=Resistor
 item.teslamancy.capacitor.name=Capacitor
 item.teslamancy.radiator.name=Radiator
 item.teslamancy.wand.name=Teslamancer Wand
+item.teslamancy.powercell.name=Powercell
+
+#Tooltips
+tooltip.teslamancy.showinfo=Press §d%s§7 for more info.
+tooltip.teslamancy.powerinfo=%s / %sT
+tooltip.teslamancy.output=Output: %sT/t
+tooltip.teslamancy.input=Input: %sT/t
 
 #Misc
 itemGroup.teslamancy=Teslamancy

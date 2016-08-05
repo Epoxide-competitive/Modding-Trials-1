@@ -1,12 +1,15 @@
 package net.epoxide.teslamancy.handler;
 
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.*;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerBlock;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItem;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItemInvModel;
 
 import net.epoxide.teslamancy.block.BlockInductionPad;
 import net.epoxide.teslamancy.block.BlockPlasmaGenerator;
 import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
 import net.epoxide.teslamancy.item.ItemMaterial;
+import net.epoxide.teslamancy.item.ItemPowerCell;
 import net.epoxide.teslamancy.item.ItemWand;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -19,6 +22,7 @@ public class ContentHandler {
     
     public static Item itemMaterial;
     public static Item itemWand;
+    public static Item itemPowercell;
     
     public static void init () {
         
@@ -41,5 +45,8 @@ public class ContentHandler {
         registerItemInvModel(itemMaterial, "material", ItemMaterial.VARIANTS);
         
         itemWand = registerItem(new ItemWand(), "wand");
+        
+        itemPowercell = registerItem(new ItemPowerCell(), "powercell");
+        registerItemInvModel(itemPowercell);
     }
 }
