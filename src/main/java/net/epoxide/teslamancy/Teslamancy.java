@@ -1,8 +1,10 @@
 package net.epoxide.teslamancy;
 
 import net.epoxide.teslamancy.handler.ContentHandler;
+import net.epoxide.teslamancy.handler.ForgeEventHandler;
 import net.epoxide.teslamancy.handler.GuiHandler;
 import net.epoxide.teslamancy.libs.Constants;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -19,6 +21,7 @@ public class Teslamancy {
         
         ContentHandler.init();
         NetworkRegistry.INSTANCE.registerGuiHandler(INSTANCE, new GuiHandler());
+        MinecraftForge.EVENT_BUS.register(new ForgeEventHandler());
     }
     
     @Mod.EventHandler
