@@ -12,6 +12,7 @@ import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
 import net.epoxide.teslamancy.fluid.FluidPrimalPlasma;
 import net.epoxide.teslamancy.item.ItemLoadstone;
 import net.epoxide.teslamancy.item.ItemMaterial;
+import net.epoxide.teslamancy.item.ItemPowerArmor;
 import net.epoxide.teslamancy.item.ItemPowerCell;
 import net.epoxide.teslamancy.item.ItemWand;
 import net.minecraft.block.Block;
@@ -24,16 +25,17 @@ public class ContentHandler {
     public static Block blockPlasmaGenerator;
     public static Block blockInductionPad;
     public static Block blockPrimalPlasma;
-    
+
     public static Item itemMaterial;
     public static Item itemWand;
     public static Item itemPowercell;
     public static Item itemLoadstone;
-    
+    public static Item itemPowerArmor;
+
     public static void init () {
-        
+
         FluidRegistry.registerFluid(FluidPrimalPlasma.INSTANCE);
-        
+
         initBlock();
         initItem();
     }
@@ -45,7 +47,7 @@ public class ContentHandler {
         
         blockInductionPad = registerBlock(new BlockInductionPad(), "induction_pad");
         GameRegistry.registerTileEntity(TileEntityInductionPad.class, "induction_pad");
-        
+
         blockPrimalPlasma = registerBlock(new BlockPrimalPlasma(), "primal_plasma");
     }
     
@@ -55,10 +57,11 @@ public class ContentHandler {
         registerItemInvModel(itemMaterial, "material", ItemMaterial.VARIANTS);
         
         itemWand = registerItem(new ItemWand(), "wand");
-        
+        itemPowerArmor = registerItem(new ItemPowerArmor(), "powerarmor");
+
         itemPowercell = registerItem(new ItemPowerCell(), "powercell");
         registerItemInvModel(itemPowercell);
-        
+
         itemLoadstone = registerItem(new ItemLoadstone(), "loadstone");
         registerItemInvModel(itemLoadstone);
     }

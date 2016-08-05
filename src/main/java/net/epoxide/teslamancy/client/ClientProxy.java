@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
 
 public class ClientProxy extends CommonProxy {
     private static ModelResourceLocation fluidLocation = new ModelResourceLocation(Constants.MODID + ":primal_plasma", "fluid");
@@ -23,12 +24,7 @@ public class ClientProxy extends CommonProxy {
         Item fluid = Item.getItemFromBlock(ContentHandler.blockPrimalPlasma);
         ModelBakery.registerItemVariants(fluid);
 
-        ModelLoader.setCustomMeshDefinition(fluid, new ItemMeshDefinition() {
-            @Override
-            public ModelResourceLocation getModelLocation (ItemStack stack) {
-                return fluidLocation;
-            }
-        });
+        ModelLoader.setCustomMeshDefinition(fluid, stack -> fluidLocation);
 
         ModelLoader.setCustomStateMapper(ContentHandler.blockPrimalPlasma, new StateMapperBase() {
             @Override
@@ -36,5 +32,7 @@ public class ClientProxy extends CommonProxy {
                 return fluidLocation;
             }
         });
+
+        MinecraftForge.EVENT_BUS.register(new RenderEntityShield());
     }
 }
