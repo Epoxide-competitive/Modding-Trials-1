@@ -24,5 +24,8 @@ tooltip.teslamancy.artificial=Artificialy Charged
 tooltip.teslamancy.loadstone.true=Enabled: §aTrue
 tooltip.teslamancy.loadstone.false=Enabled: §cFalse
 
+#Entities
+entity.teslamancy.teslamental.name=Teslamental
+
 #Misc
 itemGroup.teslamancy=Teslamancy
