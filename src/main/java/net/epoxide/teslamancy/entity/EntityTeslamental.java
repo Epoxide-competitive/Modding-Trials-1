@@ -5,6 +5,7 @@ import net.epoxide.teslamancy.entity.ai.AILookAround;
 import net.epoxide.teslamancy.entity.ai.FlyingMovementHelper;
 import net.epoxide.teslamancy.libs.Constants;
 import net.minecraft.entity.EntityFlying;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +34,15 @@ public class EntityTeslamental extends EntityFlying implements IMob {
         this.tasks.addTask(5, new AIFlyRandomly(this));
         this.tasks.addTask(7, new AILookAround(this));
         this.targetTasks.addTask(1, new EntityAIFindEntityNearestPlayer(this));
+    }
+    
+    protected void applyEntityAttributes() {
+        
+        super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(32.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(35.0D);
     }
     
     @Override
