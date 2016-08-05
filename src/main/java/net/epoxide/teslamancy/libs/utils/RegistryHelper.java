@@ -2,6 +2,7 @@ package net.epoxide.teslamancy.libs.utils;
 
 import net.epoxide.teslamancy.creativetab.CreativeTabTeslamancy;
 import net.epoxide.teslamancy.libs.Constants;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -14,7 +15,7 @@ public class RegistryHelper {
     
     /**
      * Registers a block with a default item block.
-     * 
+     *
      * @param block The block to register.
      * @param blockName The name for the block. Should use snake case.
      * @return The block that was registered.
@@ -26,7 +27,7 @@ public class RegistryHelper {
     
     /**
      * Registers a block along side a custom item block.
-     * 
+     *
      * @param block The block to register.
      * @param blockName The name for the block. Should use snake case.
      * @param itemBlock The item to use for the block.
@@ -45,7 +46,7 @@ public class RegistryHelper {
     
     /**
      * Registers an item.
-     * 
+     *
      * @param item The item to register.
      * @param itemName The name for the item. Should use snake case.
      * @return The block that was registered.
@@ -63,7 +64,7 @@ public class RegistryHelper {
     /**
      * Registers an inventory model for a block, using a series of strings which represent
      * model names in order of meta.
-     * 
+     *
      * @param block The block to register models for.
      * @param variants Array of variant names.
      */
@@ -75,7 +76,7 @@ public class RegistryHelper {
     /**
      * Registers an inventory model for a block, using a prefix and a series of strings which
      * represent model names in order of meta.
-     * 
+     *
      * @param block The block to register models for.
      * @param prefix The prefix to use on all models.
      * @param variants Array of variant names.
@@ -87,7 +88,7 @@ public class RegistryHelper {
     
     /**
      * Registers an inventory model for a basic block.
-     * 
+     *
      * @param block The block to register models for.
      */
     public static void registerBlockInvModel (Block block) {
@@ -97,7 +98,7 @@ public class RegistryHelper {
     
     /**
      * Registers an inventory model for an item.
-     * 
+     *
      * @param item The item to register a model for.
      * @param meta The meta for the model.
      * @param model The model name.
@@ -109,7 +110,7 @@ public class RegistryHelper {
     
     /**
      * Registers an inventory model for an item with multiple meta states.
-     * 
+     *
      * @param item The item to register a model for.
      * @param prefix A prefix for all the variant states.
      * @param variants Array of variants in order of meta value.
@@ -122,7 +123,7 @@ public class RegistryHelper {
     
     /**
      * Registers an inventory model for an item with multiple meta states.
-     * 
+     *
      * @param item The item to register a model for.
      * @param variants Array of variants in order of meta value.
      */
@@ -134,7 +135,7 @@ public class RegistryHelper {
     
     /**
      * Register a basic inventory model for an item.
-     * 
+     *
      * @param item The item to register a model for.
      */
     public static void registerItemInvModel (Item item) {
@@ -147,7 +148,7 @@ public class RegistryHelper {
      * {@link ModelLoader#setCustomModelResourceLocation(Item, int, ModelResourceLocation)}
      * that can be called server side. Doing this until I have time to work out a saner
      * registry method.
-     * 
+     *
      * @param item The item to register a model for.
      * @param meta The meta to register a model at.
      * @param model The model to register.

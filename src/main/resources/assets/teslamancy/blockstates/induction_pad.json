@@ -1,7 +1,7 @@
 {
   "variants": {
     "normal": {
-      "model": "teslamancy:inductionPad"
+      "model": "teslamancy:induction_pad"
     }
   }
 }

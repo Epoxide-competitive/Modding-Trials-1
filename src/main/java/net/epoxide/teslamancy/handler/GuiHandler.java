@@ -1,6 +1,8 @@
 package net.epoxide.teslamancy.handler;
 
+import net.epoxide.teslamancy.client.gui.GuiWand;
 import net.epoxide.teslamancy.common.ContainerWand;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;

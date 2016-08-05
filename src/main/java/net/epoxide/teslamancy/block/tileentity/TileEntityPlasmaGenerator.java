@@ -4,7 +4,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileEntityPlasmaGenerator extends TileEntity {
     
-    public TileEntityPlasmaGenerator() {
-    
+    public TileEntityPlasmaGenerator () {
+
     }
 }

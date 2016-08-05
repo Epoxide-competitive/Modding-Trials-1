@@ -1,21 +1,8 @@
-package net.epoxide.teslamancy.handler;
-
-import static org.lwjgl.opengl.GL11.GL_COMPILE;
-import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
-import static org.lwjgl.opengl.GL11.GL_POLYGON;
-import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
-import static org.lwjgl.opengl.GL11.glBegin;
-import static org.lwjgl.opengl.GL11.glCallList;
-import static org.lwjgl.opengl.GL11.glEnd;
-import static org.lwjgl.opengl.GL11.glEndList;
-import static org.lwjgl.opengl.GL11.glGenLists;
-import static org.lwjgl.opengl.GL11.glNewList;
-import static org.lwjgl.opengl.GL11.glVertex2d;
-
-import org.lwjgl.opengl.GL11;
+package net.epoxide.teslamancy.client.gui;
 
 import net.epoxide.teslamancy.common.ContainerWand;
 import net.epoxide.teslamancy.libs.Constants;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -27,15 +14,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
+import org.lwjgl.opengl.GL11;
+
+import static org.lwjgl.opengl.GL11.*;
+
 public class GuiWand extends GuiContainer {
     private final EntityPlayer player;
     private final World world;
     
-    float pTicks = 0;
-    int max = 0;
+    float partialTicks = 0;
+    int frame = 0;
     private int callList = -1;
     
-    public GuiWand(EntityPlayer player, World world) {
+    public GuiWand (EntityPlayer player, World world) {
         super(new ContainerWand(player, world));
         this.player = player;
         this.world = world;
@@ -44,13 +35,13 @@ public class GuiWand extends GuiContainer {
     @Override
     protected void drawGuiContainerBackgroundLayer (float partialTicks, int mouseX, int mouseY) {
         
-        this.pTicks += partialTicks;
+        this.partialTicks += partialTicks;
         
-        if (this.pTicks > 1.0) {
-            this.max++;
-            if (this.max > 6)
-                this.max = 6;
-            this.pTicks = 0;
+        if (this.partialTicks > 1.0) {
+            this.frame++;
+            if (this.frame > 6)
+                this.frame = 6;
+            this.partialTicks = 0;
         }
         
         GlStateManager.pushMatrix();
@@ -63,13 +54,13 @@ public class GuiWand extends GuiContainer {
         for (int i = 0; i < 6; i++) {
             GlStateManager.pushMatrix();
             GlStateManager.scale(13, 13, 0);
-            final double f = i / 3.0 * Math.PI - (6 - this.max) * 8;
-            GlStateManager.translate(Math.sin(f) * this.max * 5 / 8, Math.cos(f) * this.max * 5 / 8, 0);
+            final double f = i / 3.0 * Math.PI - (6 - this.frame) * 8;
+            GlStateManager.translate(Math.sin(f) * this.frame * 5 / 8, Math.cos(f) * this.frame * 5 / 8, 0);
             this.drawHexagon();
             GlStateManager.popMatrix();
             
-            this.inventorySlots.getSlot(i).xDisplayPosition = (int) (Math.sin(f) * this.max * 8.0f - 8.0f + this.xSize / 2.0f);
-            this.inventorySlots.getSlot(i).yDisplayPosition = (int) (Math.cos(f) * this.max * 8.0f - 8.0f);
+            this.inventorySlots.getSlot(i).xDisplayPosition = (int) (Math.sin(f) * this.frame * 8.0f - 8.0f + this.xSize / 2.0f);
+            this.inventorySlots.getSlot(i).yDisplayPosition = (int) (Math.cos(f) * this.frame * 8.0f - 8.0f);
             if (!this.inventorySlots.getSlot(i).getHasStack())
                 this.inventorySlots.getSlot(i).inventory.setInventorySlotContents(i, new ItemStack(Items.APPLE));
         }
@@ -82,7 +73,7 @@ public class GuiWand extends GuiContainer {
         this.inventorySlots.getSlot(6).yDisplayPosition = (int) (this.ySize / 2.0) - 8;
         if (!this.inventorySlots.getSlot(6).getHasStack())
             this.inventorySlots.getSlot(6).inventory.setInventorySlotContents(6, new ItemStack(Items.APPLE));
-            
+
         GL11.glEnable(GL_DEPTH_TEST);
         GL11.glEnable(GL_TEXTURE_2D);
         

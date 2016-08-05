@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 
 import net.epoxide.teslamancy.libs.Constants;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.ResourceLocation;
@@ -29,7 +30,7 @@ public class CapabilityHelper {
             
             if (capabilities == null)
                 capabilities = new CapabilityDispatcher(new HashMap<ResourceLocation, ICapabilityProvider>());
-                
+
             final ICapabilityProvider[] caps = (ICapabilityProvider[]) capsField.get(capabilities);
             final String[] names = (String[]) namesField.get(capabilities);
             
@@ -39,7 +40,7 @@ public class CapabilityHelper {
                     Constants.LOGGER.warn("Attempted to add duplicate providers!");
                     return;
                 }
-                
+
             final ICapabilityProvider[] expandedCaps = new ICapabilityProvider[caps.length + 1];
             expandedCaps[expandedCaps.length - 1] = provider;
             System.arraycopy(caps, 0, expandedCaps, 0, caps.length);
@@ -60,9 +61,7 @@ public class CapabilityHelper {
             }
             
             capabilitiesField.set(stack, capabilities);
-        }
-        
-        catch (IllegalArgumentException | IllegalAccessException exception) {
+        } catch (IllegalArgumentException | IllegalAccessException exception) {
             
             Constants.LOGGER.warn(exception);
         }
@@ -85,9 +84,7 @@ public class CapabilityHelper {
                 
                 namesField = CapabilityDispatcher.class.getDeclaredField("names");
                 namesField.setAccessible(true);
-            }
-            
-            catch (NoSuchFieldException | SecurityException exception) {
+            } catch (NoSuchFieldException | SecurityException exception) {
                 
                 Constants.LOGGER.warn(exception);
             }

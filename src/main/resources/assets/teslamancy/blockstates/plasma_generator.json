@@ -1,7 +1,7 @@
 {
   "variants": {
     "normal": {
-      "model": "teslamancy:plasmaGenerator"
+      "model": "teslamancy:plasma_generator"
     }
   }
 }

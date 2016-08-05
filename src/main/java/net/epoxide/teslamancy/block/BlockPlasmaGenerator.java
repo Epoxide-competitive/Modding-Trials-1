@@ -1,6 +1,7 @@
 package net.epoxide.teslamancy.block;
 
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
@@ -9,7 +10,7 @@ import net.minecraft.world.World;
 
 public class BlockPlasmaGenerator extends Block implements ITileEntityProvider {
     
-    public BlockPlasmaGenerator() {
+    public BlockPlasmaGenerator () {
         
         super(Material.IRON);
     }

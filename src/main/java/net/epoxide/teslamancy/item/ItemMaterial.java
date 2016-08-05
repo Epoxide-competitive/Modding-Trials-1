@@ -10,9 +10,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemMaterial extends Item {
     
-    public static final String[] VARIANTS = new String[] { "circuit", "resistor", "capacitor", "radiator" };
+    public static final String[] VARIANTS = new String[]{"circuit", "resistor", "capacitor", "radiator"};
     
-    public ItemMaterial() {
+    public ItemMaterial () {
         
         this.hasSubtypes = true;
     }

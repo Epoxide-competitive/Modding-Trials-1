@@ -1,13 +1,14 @@
 package net.epoxide.teslamancy.libs.utils;
 
-import java.util.List;
-
 import com.mojang.realmsclient.gui.ChatFormatting;
+
+import java.util.List;
 
 import net.darkhax.tesla.api.ITeslaHolder;
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
 import net.darkhax.tesla.lib.TeslaUtils;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.GameSettings;
