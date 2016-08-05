@@ -20,6 +20,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemLoadstone extends Item {
     
+    public ItemLoadstone() {
+        
+        this.setMaxStackSize(1);
+    }
+    
     @Override
     public void onUpdate (ItemStack stack, World world, Entity entity, int slot, boolean isHeld) {
         
@@ -46,7 +51,7 @@ public class ItemLoadstone extends Item {
             stack.setTagCompound(new NBTTagCompound());
             
         stack.getTagCompound().setBoolean("Enabled", !isEnabled(stack));
-        return new ActionResult(EnumActionResult.PASS, stack);
+        return new ActionResult<ItemStack>(EnumActionResult.PASS, stack);
     }
     
     public static boolean isEnabled (ItemStack stack) {
