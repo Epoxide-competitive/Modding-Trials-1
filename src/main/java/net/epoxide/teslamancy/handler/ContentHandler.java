@@ -4,11 +4,16 @@ import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerBlock;
 import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItem;
 import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItemInvModel;
 
+import java.awt.Color;
+
+import net.epoxide.teslamancy.Teslamancy;
 import net.epoxide.teslamancy.block.BlockInductionPad;
 import net.epoxide.teslamancy.block.BlockPlasmaGenerator;
 import net.epoxide.teslamancy.block.BlockPrimalPlasma;
 import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
+import net.epoxide.teslamancy.client.render.entity.RenderTeslamental;
+import net.epoxide.teslamancy.entity.EntityTeslamental;
 import net.epoxide.teslamancy.fluid.FluidPrimalPlasma;
 import net.epoxide.teslamancy.item.ItemLoadstone;
 import net.epoxide.teslamancy.item.ItemMaterial;
@@ -17,6 +22,8 @@ import net.epoxide.teslamancy.item.ItemWand;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ContentHandler {
@@ -36,6 +43,7 @@ public class ContentHandler {
         
         initBlock();
         initItem();
+        initEntities();
     }
     
     private static void initBlock () {
@@ -61,5 +69,12 @@ public class ContentHandler {
         
         itemLoadstone = registerItem(new ItemLoadstone(), "loadstone");
         registerItemInvModel(itemLoadstone);
+    }
+    
+    private static void initEntities () {
+        
+        EntityRegistry.registerModEntity(EntityTeslamental.class, "teslamental", 0, Teslamancy.INSTANCE, 32, 1, true);
+        EntityRegistry.registerEgg(EntityTeslamental.class, new Color(0, 141, 141).getRGB(), Color.YELLOW.getRGB());
+        RenderingRegistry.registerEntityRenderingHandler(EntityTeslamental.class, new RenderTeslamental.RenderFactoryTNT());
     }
 }
