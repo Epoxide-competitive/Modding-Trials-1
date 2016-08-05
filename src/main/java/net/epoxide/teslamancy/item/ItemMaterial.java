@@ -29,7 +29,7 @@ public class ItemMaterial extends Item {
     }
     
     @SideOnly(Side.CLIENT)
-    public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
+    public void getSubItems (Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
         
         for (int meta = 0; meta < VARIANTS.length; meta++)
             subItems.add(new ItemStack(itemIn, 1, meta));
