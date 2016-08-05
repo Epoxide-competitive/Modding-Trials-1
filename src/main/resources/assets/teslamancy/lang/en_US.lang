@@ -11,6 +11,7 @@ item.teslamancy.capacitor.name=Capacitor
 item.teslamancy.radiator.name=Radiator
 item.teslamancy.wand.name=Teslamancer Wand
 item.teslamancy.powercell.name=Powercell
+item.teslamancy.loadstone.name=Loadstone
 
 #Tooltips
 tooltip.teslamancy.showinfo=Press §d%s§7 for more info.
@@ -18,6 +19,8 @@ tooltip.teslamancy.powerinfo=%s / %sT
 tooltip.teslamancy.output=Output: %sT/t
 tooltip.teslamancy.input=Input: %sT/t
 tooltip.teslamancy.artificial=Artificialy Charged
+tooltip.teslamancy.loadstone.true=Enabled: §aTrue
+tooltip.teslamancy.loadstone.false=Enabled: §cFalse
 
 #Misc
 itemGroup.teslamancy=Teslamancy
