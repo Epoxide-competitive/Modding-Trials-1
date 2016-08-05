@@ -2,7 +2,6 @@ package net.epoxide.teslamancy.libs;
 
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.capability.TeslaCapabilities;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
@@ -13,7 +12,7 @@ public class ArtificialTeslaProvider implements INBTSerializable<NBTTagCompound>
     
     private final ArtificialTeslaContainer container;
     
-    public ArtificialTeslaProvider () {
+    public ArtificialTeslaProvider() {
         
         this.container = new ArtificialTeslaContainer();
     }
@@ -30,7 +29,7 @@ public class ArtificialTeslaProvider implements INBTSerializable<NBTTagCompound>
         
         if (capability == TeslaCapabilities.CAPABILITY_CONSUMER || capability == TeslaCapabilities.CAPABILITY_PRODUCER || capability == TeslaCapabilities.CAPABILITY_HOLDER)
             return (T) this.container;
-
+            
         return null;
     }
     
@@ -48,7 +47,7 @@ public class ArtificialTeslaProvider implements INBTSerializable<NBTTagCompound>
     
     public class ArtificialTeslaContainer extends BaseTeslaContainer {
         
-        public ArtificialTeslaContainer () {
+        public ArtificialTeslaContainer() {
             
             super(500, 5, 5);
         }

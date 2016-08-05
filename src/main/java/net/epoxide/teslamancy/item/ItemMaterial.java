@@ -10,9 +10,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemMaterial extends Item {
     
-    public static final String[] VARIANTS = new String[]{"circuit", "resistor", "capacitor", "radiator"};
+    public static final String[] VARIANTS = new String[] { "circuit", "resistor", "capacitor", "radiator" };
     
-    public ItemMaterial () {
+    public ItemMaterial() {
         
         this.hasSubtypes = true;
     }
@@ -28,6 +28,7 @@ public class ItemMaterial extends Item {
         return "item.teslamancy." + this.getVariantForMeta(stack.getMetadata());
     }
     
+    @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems (Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
         

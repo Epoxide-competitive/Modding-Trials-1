@@ -1,8 +1,21 @@
 package net.epoxide.teslamancy.client.gui;
 
+import static org.lwjgl.opengl.GL11.GL_COMPILE;
+import static org.lwjgl.opengl.GL11.GL_DEPTH_TEST;
+import static org.lwjgl.opengl.GL11.GL_POLYGON;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
+import static org.lwjgl.opengl.GL11.glBegin;
+import static org.lwjgl.opengl.GL11.glCallList;
+import static org.lwjgl.opengl.GL11.glEnd;
+import static org.lwjgl.opengl.GL11.glEndList;
+import static org.lwjgl.opengl.GL11.glGenLists;
+import static org.lwjgl.opengl.GL11.glNewList;
+import static org.lwjgl.opengl.GL11.glVertex2d;
+
+import org.lwjgl.opengl.GL11;
+
 import net.epoxide.teslamancy.common.ContainerWand;
 import net.epoxide.teslamancy.libs.Constants;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -14,10 +27,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import org.lwjgl.opengl.GL11;
-
-import static org.lwjgl.opengl.GL11.*;
-
 public class GuiWand extends GuiContainer {
     private final EntityPlayer player;
     private final World world;
@@ -26,7 +35,7 @@ public class GuiWand extends GuiContainer {
     int frame = 0;
     private int callList = -1;
     
-    public GuiWand (EntityPlayer player, World world) {
+    public GuiWand(EntityPlayer player, World world) {
         super(new ContainerWand(player, world));
         this.player = player;
         this.world = world;
@@ -73,7 +82,7 @@ public class GuiWand extends GuiContainer {
         this.inventorySlots.getSlot(6).yDisplayPosition = (int) (this.ySize / 2.0) - 8;
         if (!this.inventorySlots.getSlot(6).getHasStack())
             this.inventorySlots.getSlot(6).inventory.setInventorySlotContents(6, new ItemStack(Items.APPLE));
-
+            
         GL11.glEnable(GL_DEPTH_TEST);
         GL11.glEnable(GL_TEXTURE_2D);
         

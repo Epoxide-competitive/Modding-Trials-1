@@ -2,7 +2,6 @@ package net.epoxide.teslamancy.item;
 
 import net.epoxide.teslamancy.Teslamancy;
 import net.epoxide.teslamancy.handler.GuiHandler;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

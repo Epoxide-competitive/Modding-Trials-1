@@ -2,11 +2,9 @@ package net.epoxide.teslamancy.item;
 
 import java.util.List;
 
-import net.epoxide.teslamancy.libs.utils.NewTeslaUtils;
-
 import net.darkhax.tesla.api.implementation.BaseTeslaContainer;
 import net.darkhax.tesla.api.implementation.BaseTeslaContainerProvider;
-
+import net.epoxide.teslamancy.libs.utils.NewTeslaUtils;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

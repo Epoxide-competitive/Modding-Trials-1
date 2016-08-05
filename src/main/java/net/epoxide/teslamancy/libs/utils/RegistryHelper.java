@@ -2,7 +2,6 @@ package net.epoxide.teslamancy.libs.utils;
 
 import net.epoxide.teslamancy.creativetab.CreativeTabTeslamancy;
 import net.epoxide.teslamancy.libs.Constants;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
