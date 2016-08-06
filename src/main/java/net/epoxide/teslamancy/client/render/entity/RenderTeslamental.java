@@ -47,7 +47,7 @@ public class RenderTeslamental extends Render<EntityTeslamental> {
     }
     
     @SideOnly(Side.CLIENT)
-    public static class RenderFactoryTNT implements IRenderFactory<EntityTeslamental> {
+    public static class RenderFactoryTeslamental implements IRenderFactory<EntityTeslamental> {
         
         @Override
         public RenderTeslamental createRenderFor (RenderManager manager) {
