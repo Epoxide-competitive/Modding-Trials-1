@@ -1,9 +1,5 @@
 package net.epoxide.teslamancy.handler;
 
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerBlock;
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItem;
-import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItemInvModel;
-
 import java.awt.Color;
 
 import net.epoxide.teslamancy.Teslamancy;
@@ -19,7 +15,7 @@ import net.epoxide.teslamancy.entity.EntityTeslamentalShot;
 import net.epoxide.teslamancy.fluid.FluidPrimalPlasma;
 import net.epoxide.teslamancy.item.ItemLoadstone;
 import net.epoxide.teslamancy.item.ItemMaterial;
-import net.epoxide.teslamancy.item.ItemPowerArmor;
+import net.epoxide.teslamancy.item.ItemPowerShield;
 import net.epoxide.teslamancy.item.ItemPowerCell;
 import net.epoxide.teslamancy.item.ItemWand;
 import net.minecraft.block.Block;
@@ -28,6 +24,10 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerBlock;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItem;
+import static net.epoxide.teslamancy.libs.utils.RegistryHelper.registerItemInvModel;
 
 public class ContentHandler {
     
@@ -39,7 +39,7 @@ public class ContentHandler {
     public static Item itemWand;
     public static Item itemPowercell;
     public static Item itemLoadstone;
-    public static Item itemPowerArmor;
+    public static Item itemPowerShield;
 
     public static void init () {
 
@@ -67,7 +67,7 @@ public class ContentHandler {
         registerItemInvModel(itemMaterial, "material", ItemMaterial.VARIANTS);
         
         itemWand = registerItem(new ItemWand(), "wand");
-        itemPowerArmor = registerItem(new ItemPowerArmor(), "powerarmor");
+        itemPowerShield = registerItem(new ItemPowerShield(), "powershield");
 
         itemPowercell = registerItem(new ItemPowerCell(), "powercell");
         registerItemInvModel(itemPowercell);
@@ -81,7 +81,7 @@ public class ContentHandler {
         EntityRegistry.registerModEntity(EntityTeslamental.class, "teslamental", 0, Teslamancy.INSTANCE, 32, 1, true);
         EntityRegistry.registerEgg(EntityTeslamental.class, new Color(0, 141, 141).getRGB(), Color.YELLOW.getRGB());
         RenderingRegistry.registerEntityRenderingHandler(EntityTeslamental.class, new RenderTeslamental.RenderFactoryTeslamental());
-        
+
         EntityRegistry.registerModEntity(EntityTeslamentalShot.class, "teslamentalshot", 1, Teslamancy.INSTANCE, 24, 1, true);
         RenderingRegistry.registerEntityRenderingHandler(EntityTeslamentalShot.class, new RenderTeslamentalShot.RenderFactoryTeslamentalShot());
     }

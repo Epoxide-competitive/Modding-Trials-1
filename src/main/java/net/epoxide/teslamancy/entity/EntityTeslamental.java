@@ -61,49 +61,49 @@ public class EntityTeslamental extends EntityMob {
         
         if (!this.onGround && this.motionY < 0D)
             this.motionY *= 0.6D;
-            
+
         if (this.isInsideOfMaterial(Material.WATER)) {
-            
+
             this.setDropItemsWhenDead(false);
             this.setDead();
         }
-        
+
         super.onLivingUpdate();
     }
     
     @Override
     public void updateAITasks () {
-        
+
         final EntityLivingBase target = this.getAttackTarget();
-        
+
         if (target != null && target.posY + target.getEyeHeight() > this.posY + this.getEyeHeight()) {
-            
+
             this.motionY += (0.3D - this.motionY) * 0.3D;
             this.isAirBorne = true;
         }
     }
-    
+
     @Override
     public void fall (float distance, float damageMultiplier) {
-    
+
     }
-    
+
     @Override
     protected ResourceLocation getLootTable () {
         
         return LOOT_TABLE;
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public int getBrightnessForRender (float partialTicks) {
-        
+
         return 15728880;
     }
-    
+
     @Override
     public float getBrightness (float partialTicks) {
-        
+
         return 1.0F;
     }
 }

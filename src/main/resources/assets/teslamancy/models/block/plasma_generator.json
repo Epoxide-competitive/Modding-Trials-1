@@ -1,6 +1,6 @@
 {
   "parent": "blocks/cube_all",
   "textures": {
-    "all": "teslamancy:block/plasma_generator"
+    "all": "teslamancy:blocks/plasma_generator"
   }
 }

@@ -63,7 +63,7 @@ public class ItemLoadstone extends Item {
     @SideOnly(Side.CLIENT)
     public void addInformation (ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
         
-        tooltip.add(I18n.format("tooltip.teslamancy.loadstone." + isEnabled(stack)));
+        tooltip.add(I18n.format("tooltip.teslamancy.boolean." + isEnabled(stack)));
     }
     
     @Override
