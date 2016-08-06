@@ -13,7 +13,9 @@ import net.epoxide.teslamancy.block.BlockPrimalPlasma;
 import net.epoxide.teslamancy.block.tileentity.TileEntityInductionPad;
 import net.epoxide.teslamancy.block.tileentity.TileEntityPlasmaGenerator;
 import net.epoxide.teslamancy.client.render.entity.RenderTeslamental;
+import net.epoxide.teslamancy.client.render.entity.RenderTeslamentalShot;
 import net.epoxide.teslamancy.entity.EntityTeslamental;
+import net.epoxide.teslamancy.entity.EntityTeslamentalShot;
 import net.epoxide.teslamancy.fluid.FluidPrimalPlasma;
 import net.epoxide.teslamancy.item.ItemLoadstone;
 import net.epoxide.teslamancy.item.ItemMaterial;
@@ -75,6 +77,9 @@ public class ContentHandler {
         
         EntityRegistry.registerModEntity(EntityTeslamental.class, "teslamental", 0, Teslamancy.INSTANCE, 32, 1, true);
         EntityRegistry.registerEgg(EntityTeslamental.class, new Color(0, 141, 141).getRGB(), Color.YELLOW.getRGB());
-        RenderingRegistry.registerEntityRenderingHandler(EntityTeslamental.class, new RenderTeslamental.RenderFactoryTNT());
+        RenderingRegistry.registerEntityRenderingHandler(EntityTeslamental.class, new RenderTeslamental.RenderFactoryTeslamental());
+        
+        EntityRegistry.registerModEntity(EntityTeslamentalShot.class, "teslamentalshot", 1, Teslamancy.INSTANCE, 24, 1, true);
+        RenderingRegistry.registerEntityRenderingHandler(EntityTeslamentalShot.class, new RenderTeslamentalShot.RenderFactoryTeslamentalShot());
     }
 }
